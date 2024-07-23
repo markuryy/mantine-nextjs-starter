@@ -14,7 +14,7 @@ export function NavbarContent() {
   return (
     <Stack justify="space-between" h="100%" p="md">
       <Stack align="center" gap="xl">
-        <Tooltip label="Markury" position="right" withArrow>
+        <Tooltip label="Home" position="right" withArrow>
           <UnstyledButton component={Link} href="/">
             <LuSparkles size={32} />
           </UnstyledButton>
