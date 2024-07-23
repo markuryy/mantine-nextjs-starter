@@ -1,10 +1,10 @@
-import { Card } from "@mantine/core";
-import Image from "next/image";
+import { Title, Text, Stack } from "@mantine/core";
 
 export default function Home() {
   return (
-    <main>
-      <h1 className="text-3xl font-bold">Hello world</h1>
-    </main>
+    <Stack align="center" justify="center" h="100%">
+      <Title order={1}>Welcome to Markury</Title>
+      <Text>This is the home page of your Markury project.</Text>
+    </Stack>
   );
 }
