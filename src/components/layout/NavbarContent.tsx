@@ -1,16 +1,25 @@
-import { Tooltip, UnstyledButton, Stack } from "@mantine/core";
-import { LuSparkles, LuSettings, LuCroissant, LuHelpCircle } from "react-icons/lu";
+import { Tooltip, UnstyledButton, Stack, useMantineColorScheme, ActionIcon } from "@mantine/core";
+import { LuSparkles, LuSettings, LuCroissant, LuHelpCircle, LuSun, LuMoon } from "react-icons/lu";
 import Link from "next/link";
 
-const SidebarButton = ({ icon: Icon, label, href }: { icon: React.ElementType; label: string; href: string }) => (
+const SidebarButton = ({ icon: Icon, label, href, onClick }: { icon: React.ElementType; label: string; href?: string; onClick?: () => void }) => (
   <Tooltip label={label} position="right" withArrow>
-    <UnstyledButton component={Link} href={href} p="xs">
-      <Icon size={24} />
-    </UnstyledButton>
+    {href ? (
+      <UnstyledButton component={Link} href={href} p="xs">
+        <Icon size={24} />
+      </UnstyledButton>
+    ) : (
+      <UnstyledButton onClick={onClick} p="xs">
+        <Icon size={24} />
+      </UnstyledButton>
+    )}
   </Tooltip>
 );
 
 export function NavbarContent() {
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const dark = colorScheme === 'dark';
+
   return (
     <Stack justify="space-between" h="100%" p="md">
       <Stack align="center" gap="xl">
@@ -25,6 +34,14 @@ export function NavbarContent() {
           <SidebarButton icon={LuHelpCircle} label="Docs" href="/docs" />
         </Stack>
       </Stack>
+      <ActionIcon
+        variant="outline"
+        color={dark ? 'yellow' : 'blue'}
+        onClick={() => toggleColorScheme()}
+        title="Toggle color scheme"
+      >
+        {dark ? <LuSun size="1.1rem" /> : <LuMoon size="1.1rem" />}
+      </ActionIcon>
     </Stack>
   );
 }
