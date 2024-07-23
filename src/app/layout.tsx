@@ -9,7 +9,7 @@ import { AppLayout } from '../components/layout/AppLayout';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Markury",
+  title: "New Project",
   description: "A Markury Project",
 };
 
