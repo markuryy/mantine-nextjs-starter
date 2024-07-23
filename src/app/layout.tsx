@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { MantineProvider, createTheme, AppShell, Tooltip, UnstyledButton, Stack, Text } from "@mantine/core";
 import '@mantine/core/styles.css';
-import { LuSparkles, LuHome, LuApp, LuSettings, LuFileText } from "react-icons/lu";
+import { LuSparkles, LuHome, LuApple, LuSettings, LuFileText, LuActivity } from "react-icons/lu";
 import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -49,7 +49,7 @@ export default function RootLayout({
                   </Tooltip>
                   <Stack gap="lg">
                     <SidebarButton icon={LuHome} label="Home" href="/" />
-                    <SidebarButton icon={LuApp} label="App" href="/app" />
+                    <SidebarButton icon={LuActivity} label="App" href="/app" />
                     <SidebarButton icon={LuSettings} label="Settings" href="/settings" />
                     <SidebarButton icon={LuFileText} label="Docs" href="/docs" />
                   </Stack>
