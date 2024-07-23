@@ -45,7 +45,7 @@ To customize the Mantine theme, edit the `theme` object in `src/app/layout.tsx`.
 To learn more about the technologies used in this project, check out the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs)
-- [Mantine Documentation](https://mantine.dev/docs/getting-started/)
+- [Mantine Documentation](https://mantine.dev/)
 - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
 
 ## Deployment
