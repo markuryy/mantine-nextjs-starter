@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { MantineProvider, createTheme, AppShell, Tooltip, UnstyledButton, Stack, Text } from "@mantine/core";
+import { MantineProvider, createTheme, Tooltip, UnstyledButton, Stack, Text } from "@mantine/core";
+import { AppShell } from '@mantine/core';
 import '@mantine/core/styles.css';
-import { LuSparkles, LuHome, LuApple, LuSettings, LuFileText, LuActivity } from "react-icons/lu";
+import { LuSparkles, LuHome, LuSettings, LuFileText, LuActivity } from "react-icons/lu";
 import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -36,34 +37,37 @@ export default function RootLayout({
         <body className={inter.className}>
           <AppShell
             padding="md"
-            navbar={{ width: 80, breakpoint: 'sm' }}
-            footer={{ height: 60 }}
-          >
-            <AppShell.Navbar p="md">
-              <Stack justify="space-between" h="100%">
-                <Stack align="center" gap="xl">
-                  <Tooltip label="Markury" position="right" withArrow>
-                    <UnstyledButton component={Link} href="/">
-                      <LuSparkles size={32} />
-                    </UnstyledButton>
-                  </Tooltip>
-                  <Stack gap="lg">
-                    <SidebarButton icon={LuHome} label="Home" href="/" />
-                    <SidebarButton icon={LuActivity} label="App" href="/app" />
-                    <SidebarButton icon={LuSettings} label="Settings" href="/settings" />
-                    <SidebarButton icon={LuFileText} label="Docs" href="/docs" />
+            navbar={{
+              width: 80,
+              breakpoint: 'sm',
+              content: (
+                <Stack justify="space-between" h="100%" p="md">
+                  <Stack align="center" gap="xl">
+                    <Tooltip label="Markury" position="right" withArrow>
+                      <UnstyledButton component={Link} href="/">
+                        <LuSparkles size={32} />
+                      </UnstyledButton>
+                    </Tooltip>
+                    <Stack gap="lg">
+                      <SidebarButton icon={LuHome} label="Home" href="/" />
+                      <SidebarButton icon={LuActivity} label="App" href="/app" />
+                      <SidebarButton icon={LuSettings} label="Settings" href="/settings" />
+                      <SidebarButton icon={LuFileText} label="Docs" href="/docs" />
+                    </Stack>
                   </Stack>
                 </Stack>
-              </Stack>
-            </AppShell.Navbar>
-
-            <AppShell.Main>{children}</AppShell.Main>
-
-            <AppShell.Footer p="md">
-              <Text ta="center" size="sm">
-                A Markury Project 2024 | <Link href="https://markury.dev">markury.dev</Link>
-              </Text>
-            </AppShell.Footer>
+              ),
+            }}
+            footer={{
+              height: 60,
+              content: (
+                <Text ta="center" size="sm" p="md">
+                  A Markury Project 2024 | <Link href="https://markury.dev">markury.dev</Link>
+                </Text>
+              ),
+            }}
+          >
+            {children}
           </AppShell>
         </body>
       </MantineProvider>
