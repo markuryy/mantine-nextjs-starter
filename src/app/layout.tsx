@@ -4,7 +4,7 @@ import "./globals.css";
 import { MantineProvider, createTheme } from "@mantine/core";
 import '@mantine/core/styles.css';
 import { ColorSchemeScript } from '@mantine/core';
-import { AppShellDemo } from '../components/AppShellDemo';
+import { AppLayout } from '../components/layout/AppLayout';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,7 +29,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <MantineProvider theme={theme}>
-          <AppShellDemo>{children}</AppShellDemo>
+          <AppLayout>{children}</AppLayout>
         </MantineProvider>
       </body>
     </html>
