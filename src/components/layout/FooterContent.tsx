@@ -1,4 +1,4 @@
-import { Text } from "@mantine/core";
+import { Text } from '@mantine/core/styles/Text';
 import Link from "next/link";
 
 export function FooterContent() {
