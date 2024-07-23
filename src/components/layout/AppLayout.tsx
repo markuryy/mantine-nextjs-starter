@@ -7,12 +7,10 @@ import { useColorScheme } from '@mantine/hooks';
 import { useState } from 'react';
 
 export function AppLayout({ children }: { children: React.ReactNode }) {
-  const preferredColorScheme = useColorScheme();
-  const [colorScheme, setColorScheme] = useState(preferredColorScheme);
+  const [colorScheme, setColorScheme] = useState<'light' | 'dark'>('dark');
 
   const toggleColorScheme = (value?: 'light' | 'dark') => {
-    const nextColorScheme = value || (colorScheme === 'dark' ? 'light' : 'dark');
-    setColorScheme(nextColorScheme);
+    setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
   };
 
   return (

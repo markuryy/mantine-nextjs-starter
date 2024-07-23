@@ -34,14 +34,16 @@ export function NavbarContent() {
           <SidebarButton icon={LuHelpCircle} label="Docs" href="/docs" />
         </Stack>
       </Stack>
-      <ActionIcon
-        variant="outline"
-        color={dark ? 'yellow' : 'blue'}
-        onClick={() => toggleColorScheme()}
-        title="Toggle color scheme"
-      >
-        {dark ? <LuSun size="1.1rem" /> : <LuMoon size="1.1rem" />}
-      </ActionIcon>
+      <Stack align="center">
+        <ActionIcon
+          variant="outline"
+          color={dark ? 'yellow' : 'blue'}
+          onClick={() => toggleColorScheme()}
+          title="Toggle color scheme"
+        >
+          {dark ? <LuSun size="1.1rem" /> : <LuMoon size="1.1rem" />}
+        </ActionIcon>
+      </Stack>
     </Stack>
   );
 }
