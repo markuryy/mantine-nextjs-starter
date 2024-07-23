@@ -1,8 +1,38 @@
 {
   "title": "Documentation",
-  "content": [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel consectetur interdum, nisl nunc egestas nunc, vitae tincidunt nisl nunc euismod nunc. Sed euismod, nisi vel consectetur interdum, nisl nunc egestas nunc, vitae tincidunt nisl nunc euismod nunc.",
-    "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
-    "Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis."
+  "sections": [
+    {
+      "title": "Getting Started",
+      "content": [
+        "Welcome to our documentation! This guide will help you get started with our product.",
+        "Before you begin, make sure you have all the necessary prerequisites installed on your system."
+      ]
+    },
+    {
+      "title": "Features",
+      "subsections": [
+        {
+          "title": "Core Features",
+          "content": [
+            "Our product offers a wide range of powerful features to enhance your workflow.",
+            "Explore the core functionalities that make our product stand out from the rest."
+          ]
+        },
+        {
+          "title": "Advanced Features",
+          "content": [
+            "Once you're comfortable with the basics, dive into our advanced features.",
+            "These tools will help you take your projects to the next level."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Troubleshooting",
+      "content": [
+        "Encountering issues? Our troubleshooting guide is here to help.",
+        "Find solutions to common problems and learn how to optimize your experience."
+      ]
+    }
   ]
 }
