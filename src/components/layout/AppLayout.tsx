@@ -1,22 +1,21 @@
 'use client';
 
-import { AppShell, ColorSchemeScript, MantineProvider } from "@mantine/core";
+import { AppShell, ColorSchemeScript, MantineProvider, createTheme } from "@mantine/core";
 import { NavbarContent } from "./NavbarContent";
 import { FooterContent } from "./FooterContent";
 import { useColorScheme } from '@mantine/hooks';
 import { useState } from 'react';
 
 export function AppLayout({ children }: { children: React.ReactNode }) {
-  const [colorScheme, setColorScheme] = useState<'light' | 'dark'>('dark');
-
-  const toggleColorScheme = (value?: 'light' | 'dark') => {
-    setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
-  };
+  const theme = createTheme({
+    fontFamily: 'Open Sans, sans-serif',
+    primaryColor: 'blue',
+  });
 
   return (
     <>
       <ColorSchemeScript />
-      <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
+      <MantineProvider defaultColorScheme="dark" theme={theme}>
         <AppShell
           padding="md"
           navbar={{
